@@ -1,0 +1,29 @@
+p.fr_favorites_link a{
+    text-decoration: none;
+    color: green;
+}
+p.fr_favorites_remove_link a{
+    text-decoration: none;
+    color: red;
+}
+p.fr_favorites_link:hover a{
+    cursor: pointer;
+    color: rgb(147, 167, 159);
+    font-size: 20px;
+    border: 1px solid black;
+    border-radius: 5%;
+    background-color: rgb(1,1,1);
+    transition: .2s;
+}
+p.fr_favorites_link:active a{
+    color: tomato;
+    background-color: rgb(45, 44, 44);
+}
+p.fr_favorites_remove_link:active a{
+    color: chocolate;
+    background-color: rgb(147, 99, 99);
+}
+
+.fr_favorites_hidden{
+    display: none;
+}
