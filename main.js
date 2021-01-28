@@ -1,6 +1,8 @@
 jQuery(document).ready(function($) {
-
+    
+    //Main handler, provider adding article to favorites
     $('.fr_favorites_link a').click(function(e){
+        
         $.ajax({
             type: 'POST',
             url: frFavorites.url,
@@ -9,20 +11,24 @@ jQuery(document).ready(function($) {
                 action: 'fr_test',
                 postId: frFavorites.postId,
             },
+            
             beforeSend: function() {
                 $('.fr_favorites_link a').fadeOut(300, function() {
                     $('.fr_favorites_hidden').fadeIn();
                 });
             },
+            
             success: function(res){
                 $('.fr_favorites_hidden').fadeOut(300, function() {
                     $('.fr_favorites_link').html(res);
                 });
             },
+            
             error: function() {
                 alert('Ошибка запроса');
             }
         });
+        //Off the dafault behaviour of 
         e.preventDefault();
     });
 
